@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Wheather</string>
+    <string name="learn">В данном приложении вы можете учиться</string>
+    <string name="next">Next</string>
+</resources>
