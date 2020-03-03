@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.geektech.wheather.R;
 import com.geektech.wheather.data.entity.OnBoardEntity;
@@ -28,6 +29,7 @@ public class OnBoardActivity extends BaseActivty {
     private ViewPager viewPager;
     private ViewPagerAdapter onBoardAdapter;
     private Button btnNext;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +57,10 @@ public class OnBoardActivity extends BaseActivty {
 
     private ArrayList<OnBoardEntity> getResource() {
         ArrayList<OnBoardEntity> list = new ArrayList<>();
-        list.add(new OnBoardEntity("В данном приложении вы можете учиться", R.drawable.photo));
-        list.add(new OnBoardEntity("В данном приложении вы можете обновлять", R.drawable.photo));
-        list.add(new OnBoardEntity("В данном приложении вы можете удалять", R.drawable.photo));
-        list.add(new OnBoardEntity("Спасибо что вы с нами))", R.drawable.photo));
+        list.add(new OnBoardEntity("В данном приложении вы можете учиться", R.drawable.image1));
+        list.add(new OnBoardEntity("В данном приложении вы можете обновлять", R.drawable.image2));
+        list.add(new OnBoardEntity("В данном приложении вы можете удалять", R.drawable.delete));
+        list.add(new OnBoardEntity("Спасибо что вы с нами))", R.drawable.image4));
         return list;
     }
 
@@ -100,6 +102,7 @@ public class OnBoardActivity extends BaseActivty {
         toolbar = findViewById(R.id.toolbatTransparent);
         viewPager = findViewById(R.id.viewpager);
         btnNext = findViewById(R.id.buttonNext);
+        textView = findViewById(R.id.textview);
         setSupportActionBar(toolbar);
     }
 

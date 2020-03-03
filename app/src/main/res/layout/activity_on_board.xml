@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.onBoard.OnBoardActivity">
 
+
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
 
     <include
         layout="@layout/toolbar_transparent"
@@ -20,12 +24,19 @@
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="300dp"
-        android:layout_height="64dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="88dp"
         android:background="@drawable/button_stroke"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tabBackground="@drawable/tab_layout"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

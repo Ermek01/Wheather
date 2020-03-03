@@ -8,17 +8,17 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:layout_marginTop="130dp" />
+        android:layout_marginTop="100dp" />
 
     <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="eefe"
-        android:textSize="30sp"
+        android:text=""
+        android:textSize="20sp"
         android:textColor="@android:color/black"
-        android:layout_marginStart="180dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         />
 
