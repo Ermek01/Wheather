@@ -4,6 +4,7 @@
     <item
         android:id="@+id/action_skip"
         android:orderInCategory="100"
-        android:title="Skip"
-        app:showAsAction="always" />
+        android:title="Пропустить"
+        app:showAsAction="always"
+        />
 </menu>

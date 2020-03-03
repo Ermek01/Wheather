@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,9 +19,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.geektech.wheather.R;
+import com.geektech.wheather.data.PreferenceHelper;
 import com.geektech.wheather.data.entity.OnBoardEntity;
 import com.geektech.wheather.ui.base.BaseActivty;
 import com.geektech.wheather.ui.main.MainActivity;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -29,7 +32,8 @@ public class OnBoardActivity extends BaseActivty {
     private ViewPager viewPager;
     private ViewPagerAdapter onBoardAdapter;
     private Button btnNext;
-    private TextView textView;
+    private TabLayout tabLayout;
+    private MenuItem menuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,7 @@ public class OnBoardActivity extends BaseActivty {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
+        menuItem = menu.findItem(R.id.action_skip);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -81,28 +86,31 @@ public class OnBoardActivity extends BaseActivty {
             @Override
             public void onPageSelected(int position) {
                 if (viewPager.getCurrentItem() == 3) {
-                    btnNext.setText("Finish");
+                    btnNext.setText("Начать");
+                    menuItem.setTitle("Готово");
                     btnNext.setOnClickListener(v -> {
                         MainActivity.start(OnBoardActivity.this);
                         finish();
                     });
                 } else {
                     btnNext.setText(R.string.next);
+                    menuItem.setTitle("Пропустить");
                 }
             }
 
+
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
+        tabLayout.setupWithViewPager(viewPager, true);
     }
 
     private void initViews() {
         toolbar = findViewById(R.id.toolbatTransparent);
         viewPager = findViewById(R.id.viewpager);
         btnNext = findViewById(R.id.buttonNext);
-        textView = findViewById(R.id.textview);
+        tabLayout = findViewById(R.id.tab_layout);
         setSupportActionBar(toolbar);
     }
 
@@ -111,6 +119,7 @@ public class OnBoardActivity extends BaseActivty {
         switch (item.getItemId()) {
             case R.id.action_skip:
                 MainActivity.start(this);
+                PreferenceHelper.setIsShow(true);
                 finish();
                 break;
         }

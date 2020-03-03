@@ -24,6 +24,8 @@
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="300dp"
+        android:text="Далее"
+        android:textColor="#fff"
         android:layout_height="50dp"
         android:layout_marginBottom="88dp"
         android:background="@drawable/button_stroke"
@@ -33,9 +35,11 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:tabBackground="@drawable/tab_layout"
         />
 
