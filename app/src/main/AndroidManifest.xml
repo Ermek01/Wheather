@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.geektech.wheather">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".WeatherApp"
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.onBoard.OnBoardActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+            android:theme="@style/AppTheme"/>
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

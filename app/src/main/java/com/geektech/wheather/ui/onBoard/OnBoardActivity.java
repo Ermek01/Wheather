@@ -46,12 +46,7 @@ public class OnBoardActivity extends BaseActivty {
     }
 
     private void setupClickListener() {
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-            }
-        });
+        btnNext.setOnClickListener(v -> viewPager.setCurrentItem(viewPager.getCurrentItem() + 1));
     }
 
     public void setupViewPager() {
@@ -90,6 +85,7 @@ public class OnBoardActivity extends BaseActivty {
                     menuItem.setTitle("Готово");
                     btnNext.setOnClickListener(v -> {
                         MainActivity.start(OnBoardActivity.this);
+                        PreferenceHelper.setIsShow(true);
                         finish();
                     });
                 } else {
