@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,7 @@ import com.geektech.wheather.data.pojo.CurrentWeather;
 import com.geektech.wheather.data.pojo.ForecastWeather;
 import com.geektech.wheather.ui.base.BaseActivty;
 import com.geektech.wheather.ui.onBoard.OnBoardActivity;
+import com.geektech.wheather.ui.service.ServiceActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -38,6 +41,7 @@ public class MainActivity extends BaseActivty {
     private ImageView imageView;
     private RecyclerView recyclerView;
     private ForecastAdapter adapter;
+    private Button btnService;
 
     private static final String FORMAT ="HH:mm";
 
@@ -53,7 +57,14 @@ public class MainActivity extends BaseActivty {
         setupRecyclerView();
         loadCurrentWeather();
         loadForecastWeather();
+        setupListeners();
 
+    }
+
+    private void setupListeners() {
+        btnService.setOnClickListener(v -> {
+            startActivity(new Intent(this, ServiceActivity.class));
+        });
     }
 
     private void setupRecyclerView() {
@@ -142,6 +153,7 @@ public class MainActivity extends BaseActivty {
         tvSunrise = findViewById(R.id.tvSunrise);
         tvSunset = findViewById(R.id.tvSunset);
         imageView = findViewById(R.id.imageview);
+        btnService = findViewById(R.id.service);
     }
 
     private static String parse(Integer time){

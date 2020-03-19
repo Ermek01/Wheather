@@ -9,8 +9,6 @@ import retrofit2.http.Query;
 
 import static com.geektech.wheather.data.internet.ApiEndPoints.CURRENT_WEATHER;
 import static com.geektech.wheather.data.internet.ApiEndPoints.FORECAST_WEATHER;
-import static com.geektech.wheather.data.internet.ApiEndPoints.CURRENT_WEATHER;
-import static com.geektech.wheather.data.internet.ApiEndPoints.FORECAST_WEATHER;
 
 public interface RetrofitService {
 
